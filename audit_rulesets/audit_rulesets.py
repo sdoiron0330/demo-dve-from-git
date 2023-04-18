@@ -1,4 +1,4 @@
-from nautobot_data_validation_engine import AuditRuleset
+from nautobot_data_validation_engine.audit_rulesets import AuditRuleset
 
 class GitSiteAuditRuleset(AuditRuleset):
     model = "dcim.site"
