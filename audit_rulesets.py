@@ -4,6 +4,6 @@ class GitSiteAuditRuleset(AuditRuleset):
     model = "dcim.site"
 
     def audit_site(self, instance):
-        self.success(instance, attribute="name", validated_attribute_value=instance.name)
+        self.fail(instance, attribute="name", validated_attribute_value=instance.name)
 
 audit_rulesets = [GitSiteAuditRuleset]
