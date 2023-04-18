@@ -5,3 +5,5 @@ class GitSiteAuditRuleset(AuditRuleset):
 
     def audit_site(self, instance):
         self.success(instance, attribute="name", validated_attribute_value=instance.name)
+
+audit_rulesets = [GitSiteAuditRuleset]
