@@ -4,6 +4,6 @@ class GitSiteAuditRuleset(AuditRuleset):
     model = "dcim.site"
 
     def audit(self):
-        raise AuditError({"tenant": "git test", "region": "hello"})
+        raise AuditError({"tenant": "git test"})
 
 audit_rulesets = [GitSiteAuditRuleset]
