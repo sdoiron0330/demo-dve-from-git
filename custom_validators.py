@@ -18,7 +18,7 @@ class GitSiteAuditRuleset(AuditRuleset):
             except AuditError as ex:
                 messages.update(ex.message_dict)
         if messages:
-            raise AuditError(**messages)
+            raise AuditError(messages)
 
 
 custom_validators = [GitSiteAuditRuleset]
