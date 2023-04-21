@@ -7,4 +7,4 @@ class GitSiteAuditRuleset(AuditRuleset):
     def audit(self):
         raise AuditError({"tenant": "git test"})
 
-audit_rulesets = [GitSiteAuditRuleset]
+custom_validators = [GitSiteAuditRuleset]
