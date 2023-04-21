@@ -2,7 +2,7 @@ from nautobot_data_validation_engine.custom_validators import AuditRuleset, Audi
 
 class GitSiteAuditRuleset(AuditRuleset):
     model = "dcim.site"
-    enforce = True
+    enforce = False
 
     def audit_one(self):
         raise AuditError({"region": "true"})
@@ -16,7 +16,7 @@ class GitSiteAuditRuleset(AuditRuleset):
             try:
                 fn()
             except AuditError as ex:
-                messages.update(ex.messages_dict)
+                messages.update(ex.message_dict)
         if messages:
             raise AuditError(**messages)
 
