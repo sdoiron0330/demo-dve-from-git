@@ -1,14 +1,14 @@
-from nautobot_data_validation_engine.custom_validators import AuditRuleset, AuditError
+from nautobot_data_validation_engine.custom_validators import DataComplianceRule, ComplianceError
 
-class GitSiteAuditRuleset(AuditRuleset):
+class GitSiteCompliance(DataComplianceRule):
     model = "dcim.site"
     enforce = False
 
     def audit_one(self):
-        raise AuditError({"region": "true"})
+        raise ComplianceError({"region": "true"})
 
     def audit_two(self):
-        raise AuditError({"tenant": "git test"})
+        raise ComplianceError({"tenant": "git test"})
 
     def audit(self):
         messages = {}
@@ -18,7 +18,7 @@ class GitSiteAuditRuleset(AuditRuleset):
             except AuditError as ex:
                 messages.update(ex.message_dict)
         if messages:
-            raise AuditError(messages)
+            raise ComplianceError(messages)
 
 
-custom_validators = [GitSiteAuditRuleset]
+custom_validators = [GitSiteCompliance]
