@@ -15,7 +15,7 @@ class GitSiteCompliance(DataComplianceRule):
         for fn in [self.audit_one, self.audit_two]:
             try:
                 fn()
-            except AuditError as ex:
+            except ComplianceError as ex:
                 messages.update(ex.message_dict)
         if messages:
             raise ComplianceError(messages)
