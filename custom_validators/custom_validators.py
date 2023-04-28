@@ -10,7 +10,7 @@ class GitSiteCompliance(DataComplianceRule):
             raise ComplianceError({"name": "All site names should end with a number."})
     def audit_two(self):
         if not self.context["object"].region:
-            raise ComplianceError({"region": "All sites should have a region set."})
+            raise ComplianceError({"region": "All sites should have a region set2222."})
 
     def audit(self):
         messages = {}
