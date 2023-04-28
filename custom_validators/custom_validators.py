@@ -1,13 +1,16 @@
 from nautobot_data_validation_engine.custom_validators import DataComplianceRule, ComplianceError
+import re
 
 class GitSiteCompliance(DataComplianceRule):
     model = "dcim.site"
     enforce = False
 
     def audit_one(self):
-        raise ComplianceError({"region": "bruh 7"})
+        if not re.match(r"^.+\d+$", self.context["object"].name):
+            raise ComplianceError({"name": "All site names should end with a number."})
     def audit_two(self):
-        raise ComplianceError({"tenant": "git test"})
+        if not self.context["object"].region:
+            raise ComplianceError({"region": "All sites should have a region set."})
 
     def audit(self):
         messages = {}
