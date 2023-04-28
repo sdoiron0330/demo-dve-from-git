@@ -6,6 +6,6 @@ class TestComplianceThing(DataComplianceRule):
         return
 
 class GitRackCompliance(DataComplianceRule):
-    model = "dcim.racks"
+    model = "dcim.rack"
     def audit(self):
         raise ComplianceError({"name": "nope"})
