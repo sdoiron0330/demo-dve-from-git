@@ -5,7 +5,7 @@ class GitSiteCompliance(DataComplianceRule):
     enforce = False
 
     def audit_one(self):
-        raise ComplianceError({"region": "bruh 2"})
+        raise ComplianceError({"region": "bruh 3"})
     def audit_two(self):
         raise ComplianceError({"tenant": "git test"})
 
