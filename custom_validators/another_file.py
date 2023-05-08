@@ -7,5 +7,6 @@ class TestComplianceThing(DataComplianceRule):
 
 class GitRackCompliance(DataComplianceRule):
     model = "dcim.rack"
+    enforce = True
     def audit(self):
         raise ComplianceError({"name": "nope"})
