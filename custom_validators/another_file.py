@@ -9,4 +9,4 @@ class GitRackCompliance(DataComplianceRule):
     model = "dcim.rack"
     enforce = True
     def audit(self):
-        raise ComplianceError({"name": "nope"})
+        raise ComplianceError({"name": "nope", "site": "try again"})
