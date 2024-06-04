@@ -1,0 +1,2 @@
+ip access-list TEST
+  10 permit ip host 192.2.0.1
