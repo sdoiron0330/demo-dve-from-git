@@ -1,5 +1,4 @@
 ip access-list TEST
   permit ip host 192.2.0.3
   permit ip host 192.2.0.1
-  permit ip host 192.2.0.2
 snmp-server ip 10.10.0.10
