@@ -1,4 +1,4 @@
 ip access-list TEST
-  10 permit ip host 192.2.0.3
-  20 permit ip host 192.2.0.1
-  30 permit ip host 192.2.0.2
+  permit ip host 192.2.0.3
+  permit ip host 192.2.0.1
+  permit ip host 192.2.0.2
