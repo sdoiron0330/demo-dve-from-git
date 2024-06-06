@@ -3,8 +3,8 @@
 def remediation(lineage):
     print("Hello World")
     print(lineage)
-    print(lineage.text)
     for line in lineage.all_children():
+        print(line.text)
         if line.text.startswith("no"):
             line_items = line.text.split()
             try:
