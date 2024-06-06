@@ -12,5 +12,5 @@ def remediation(lineage):
             except ValueError:
                 pass
         lineage.del_child_by_text(line.text)
-        lineage.add_child(" ".join(line_items))
+        # lineage.add_child(" ".join(line_items))
     return lineage
