@@ -15,7 +15,7 @@ def remediation(lineage):
     for key,value in thing.items():
         if len(value) > 1:
             for line in value:
-                lineage.del_child_by_text(line.text)
+                lineage.del_child_by_text(line)
         # if line.text.startswith("no"):
         #     line_items = line.text.split()
         #     try:
