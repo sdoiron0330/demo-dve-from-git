@@ -1,7 +1,6 @@
 
 
 def remediation(lineage):
-    print("Hello World")
     print(lineage)
     thing = {}
     for line in lineage.all_children():
@@ -16,13 +15,7 @@ def remediation(lineage):
         if len(value) > 1:
             for line in value:
                 lineage.del_child_by_text(line)
-        # if line.text.startswith("no"):
-        #     line_items = line.text.split()
-        #     try:
-        #         if isinstance(int(line_items[1]), int):
-        #             line_items.remove(line_items[1])
-        #     except ValueError:
-        #         pass
-        # lineage.del_child_by_text(line.text)
-        # lineage.add_child(" ".join(line_items))
+    if len(list(lineage.all_children())) == 0:
+        parent = lineage.parent
+        parent.del_child_by_text(lineage.text)
     return lineage
