@@ -17,7 +17,7 @@ def remediation(lineage):
                 lineage.del_child_by_text(line)
     for line in lineage.all_children():
         line_items = line.text.split()
-        if line.startswith("no"):
+        if line.text.startswith("no"):
             index = 1
         else:
             index = 0
