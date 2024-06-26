@@ -8,4 +8,4 @@ def remediation(remediation_config):
     for delete, add in thing:
         lineage.del_child_by_text(delete)
         lineage.add_child(add)
-    
+    print('hello')
