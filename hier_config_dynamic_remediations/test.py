@@ -1,7 +1,7 @@
 
 
-def remediation(lineage):
-    print(lineage)
+def remediation(remediation_config):
+    lineage = remediation_config.get_child("startswith", "ip access-list TEST")
     thing = {}
     for line in lineage.all_children():
         print(line.text)
@@ -19,7 +19,7 @@ def remediation(lineage):
         line_items = line.text.split()
         if line.text.startswith("no"):
             index = 1
-        else:
+        elif line_items[0]:
             index = 0
         line_items.remove(line_items[index])
         lineage.del_child_by_text(line.text)
