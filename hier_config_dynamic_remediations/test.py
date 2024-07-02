@@ -1,6 +1,7 @@
 
 
 def remediation(remediation_config):
+    print(type(remediation_config))
     lineage = remediation_config.get_child("startswith", "ip access-list TEST")
     thing = {}
     for line in lineage.all_children():

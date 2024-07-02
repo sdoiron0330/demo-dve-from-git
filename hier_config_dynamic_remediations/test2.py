@@ -1,6 +1,6 @@
 
 def remediation(remediation_config):
-    lineage = remediation_config.get_child("startswith", "snmp-server")
+    lineage = remediation_config.get_child("startswith", "snmp-server ip")
     thing = []
     for line in lineage.all_children():
         print(line.text)
